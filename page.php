@@ -8,7 +8,7 @@
 
   <?php endwhile; else : ?>
 
-    <p> <?php php_e("Sorry, no posts matched your criteria."); ?> </p>
+    <p> <?php php_e("Sorry, no pages found."); ?> </p>
 
   <?php endif; ?>
 
