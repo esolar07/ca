@@ -6,7 +6,7 @@
 
     <h2>Our Newest Products</h2>
 
-  <?php endwhile; endif; ?>
+<?php endwhile; endif; ?>y
 
   <hr>
 </div>

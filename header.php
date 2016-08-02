@@ -12,12 +12,12 @@
     <body>
       <header class="top-bar">
 
-        <?
+        <?php
           $defaults = array(
             'container' => false,
             'theme_location' => 'primary-menu',
             'menu_class' => 'top-bar-left'
-          )
+          );
 
           wp_nav_menu($defaults);
         ?>
@@ -32,14 +32,14 @@
         </div>
         -->
 
-        <?
-          $defaults = array(
+        <?php
+          $defaults2 = array(
             'container' => false,
             'theme_location' => 'secondary-menu',
             'menu_class' => 'top-bar-right'
-          )
+          );
 
-          wp_nav_menu($defaults);
+          wp_nav_menu($defaults2);
         ?>
         <!--
         <div class="top-bar-right">
