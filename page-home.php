@@ -6,34 +6,48 @@
 
 <?php get_header(); ?>
 
-<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-  <ul class="orbit-container">
-    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-    <li class="orbit-slide is-active">
-      <img src="http://placehold.it/2000x750&text=1st">
-    </li>
-    <li class="orbit-slide">
-      <img src="http://placehold.it/2000x750&text=2nd">
-    </li>
-    <li class="orbit-slide">
-      <img src="http://placehold.it/2000x750&text=3nd">
-    </li>
-    <li class="orbit-slide">
-      <img src="http://placehold.it/2000x750&text=4nd">
-    </li>
-  </ul>
+<div class="callout large primary">
+  <div class="row column text-center">
+    <h1>Our Blog</h1>
+  </div>
 </div>
 
-<div class="row column text-center">
 
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <div class="row" id="content">
+      <div class="medium-8 columns">
 
-    <h2>Our Newest Products</h2>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<?php endwhile; endif; ?>y
+        <div class="blog-post">
+          <h3> <?php echo the_title(); ?> <small> <?php echo the_time(); ?> </small></h3>
 
-  <hr>
-</div>
+          <?php
+            // Must be inside a loop.
+
+            if ( has_post_thumbnail() ) {
+                 the_post_thumbnail();
+            } else {
+              echo '<img class="thumbnail" src="http://placehold.it/850x350">';
+            }
+
+          ?>
+
+          <p> <?php the_content(); ?> </p>
+          <div class="callout">
+            <ul class="menu simple">
+              <li><a href="#">Author: <?php the_author_posts_link(); ?> </a></li>
+              <li><a href="#">Comments: 3</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <?php endwhile; else; ?>
+
+          <p> <?php _e( 'Sorry, no posts matched your criteria.' ); ?> </p>
+
+       <?php endif; ?>
+
+      </div>
+    </div>
 
 <?php get_footer(); ?>

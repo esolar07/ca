@@ -1,6 +1,12 @@
 <?
 
 add_theme_support('menus');
+add_theme_support( 'post-thumbnails' );
+// ***** dev note ****
+// may need to change post image size later
+set_post_thumbnail_size( 850, 350);
+
+
 
 function register_theme_menus(){
   register_nav_menus(
