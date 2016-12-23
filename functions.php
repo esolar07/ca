@@ -6,6 +6,11 @@ add_theme_support( 'post-thumbnails' );
 // may need to change post image size later
 set_post_thumbnail_size( 850, 350);
 
+function wpt_excerpt_length($length){
+  return 16;
+}
+
+add_filter( 'excerpt_length', 'wpt_excerpt_length', 999);
 
 
 function register_theme_menus(){

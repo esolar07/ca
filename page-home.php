@@ -19,13 +19,15 @@
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <div class="blog-post">
-          <h3> <?php echo the_title(); ?> <small> <?php echo the_time(); ?> </small></h3>
+          <h3>
+            <a <?php the_permalink(); ?> > <?php the_title(); ?> </a> <small> <?php the_date(); ?> </small>
+          </h3>
 
           <?php
             // Must be inside a loop.
 
             if ( has_post_thumbnail() ) {
-                 the_post_thumbnail();
+                 the_post_thumbnail('large');
             } else {
               echo '<img class="thumbnail" src="http://placehold.it/850x350">';
             }
@@ -35,6 +37,7 @@
           <p> <?php the_content(); ?> </p>
           <div class="callout">
             <ul class="menu simple">
+              <li> <?php echo get_avatar('ID', 24); ?> </li>
               <li><a href="#">Author: <?php the_author_posts_link(); ?> </a></li>
               <li><a href="#">Comments: 3</a></li>
             </ul>
