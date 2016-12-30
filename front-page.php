@@ -36,4 +36,6 @@
   <hr>
 </div>
 
+<?php get_template_part('content', 'gallery'); ?>
+
 <?php get_footer(); ?>
