@@ -12,37 +12,25 @@
     <body <? body_class()?> >
       <header class="top-bar">
 
-        <?php
-          $defaults = array(
-            'container' => false,
-            'theme_location' => 'primary-menu',
-            'menu_class' => 'top-bar-left'
-          );
-
-          wp_nav_menu($defaults);
-        ?>
-
-        <!--
         <div class="top-bar-left">
           <ul class="menu">
-            <li class="menu-text"> <?php bloginfo('name'); ?> </li>
-            <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
+            <li class="menu-text"> <?php wp_title(); ?> </li>
           </ul>
         </div>
-        -->
 
-        <?php
+       <?php
+
           $defaults2 = array(
             'container' => false,
-            'theme_location' => 'secondary-menu',
-            'menu_class' => 'top-bar-right'
+            'theme_location' => 'primary-menu',
+            'menu_class' => 'menu-centered'
           );
 
           wp_nav_menu($defaults2);
+
         ?>
         <!--
-        <div class="top-bar-right">
+        <div class="menu-centered">
           <ul class="menu">
             <li><a href="#">Three</a></li>
             <li><a href="#">Four</a></li>

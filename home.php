@@ -19,7 +19,7 @@
 
           <h2> <?php echo strip_tags( get_the_excerpt() ); ?> </h2>
 
-          // Author meta data
+          <!--  Author meta data -->
           <div class="callout">
             <ul class="menu simple">
               <li> <?php echo get_avatar('ID', 24); ?> </li>
